@@ -17,7 +17,6 @@ $form.on('submit', (evt) => {
   const text = $textInput.val()
   apiClient({ method: 'get', url: `/analyze?text=${text}` }).then((apiResponse) => {
     const emotionTone = apiResponse.data.document_tone.tone_categories["0"].tones
-    console.log(emotionTone)
     $formSubmit.attr('disabled', false)
     $formModal.modal('hide')
 
